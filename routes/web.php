@@ -39,4 +39,4 @@ Route::get('/advert.all', [AdvertController::class, 'advertshow'])->name('advert
 
 Route::post('/advert.edit/{id}', [AdvertController::class, 'editAdvert'])->name('editadvertshow');
 Route::post('/advert.update/{id}', [AdvertController::class, 'updateAdvert'])->name('updateadvert');
-Route::post('/advert.delete/{id}', [AdvertController::class, 'edit'])->name('deleteadvert');
+Route::post('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');

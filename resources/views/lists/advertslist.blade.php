@@ -3,7 +3,7 @@
 listpage
 @endsection
 @section('titr')
-<h3 style="text-align:center">لیست آگهی ها</h3>
+<h3>لیست آگهی ها</h3>
 @endsection
 @section('main')
 
@@ -11,8 +11,8 @@ listpage
             <tr>
                  <td><b>advertid</b></td>
                 <td><b>title</b></td>
-                {{-- <td><b>description</b> --}}
-                </td> <td><b>edit</b></td>
+{{--                 <td><b>description</b></td> --}}
+                <td><b>edit</b></td>
                 <td><b>delete</b></td>
 
             </tr>

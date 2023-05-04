@@ -17,27 +17,27 @@ class AdvertController extends Controller
     public function insert()
     {
 
-        $validator = Validator::make(request()->all(), [
-            'title' => 'required|min:3|max:100',
-            'describtion' => 'required|min:10|max:255',
-            'price' => 'required'
-
-        ],[
-            'title.required'=>'لطفا عنوان را وارد کنید',
-            'title.min'=>'طول عنوان باید بیشتر از 2 کاراکتر باشد',
-            'title.max'=>'طول عنوان نباید بیشتر از 100 کاراکتر باشد',
-            'describtion.required'=>'لطفا متن توصیف کالا را وارد کنید',
-            'describtion.max'=>'طول توصیف کالا نباید بیشتر از 255 کاراکتر باشد',
-            'price.required'=>'لظفا قیمت را وارد کنید'
-
-        ]);
-
-
-
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator);
-        }
+//        $validator = Validator::make(request()->all(), [
+//            'title' => 'required|min:3|max:100',
+//            'describtion' => 'required|min:10|max:255',
+//            'price' => 'required'
+//
+//        ],[
+//            'title.required'=>'لطفا عنوان را وارد کنید',
+//            'title.min'=>'طول عنوان باید بیشتر از 2 کاراکتر باشد',
+//            'title.max'=>'طول عنوان نباید بیشتر از 100 کاراکتر باشد',
+//            'describtion.required'=>'لطفا متن توصیف کالا را وارد کنید',
+//            'describtion.max'=>'طول توصیف کالا نباید بیشتر از 255 کاراکتر باشد',
+//            'price.required'=>'لظفا قیمت را وارد کنید'
+//
+//        ]);
+//
+//
+//
+//        if ($validator->fails()) {
+//            return redirect()->back()
+//                ->withErrors($validator);
+//        }
 
 
         $Advert = new Advert();
