@@ -1,6 +1,15 @@
 @extends('layouts.master')
 @section('title','login')
 @section('main')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container" style="padding-left:30%;padding-right:30%; margin-top:100px;">
 
 <form style="text-align:center" method="POST" action="/advert.insert">
