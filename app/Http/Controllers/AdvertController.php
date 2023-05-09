@@ -70,15 +70,23 @@ class AdvertController extends Controller
        return view('editadvert',['advert'=>$advert]);
     }
 
-    public function updateAdvert($id){
-        $advert = Advert::find($id);
+    public function updateAdvert(request $request , $id){
+    //     $advert = Advert::find($id);
 
-        $advert->title = request()->title;
-        $advert->describtion = request()->describtion;
-        $advert->price = request()->price;
+    //     $advert->title = request()->title;
+    //     $advert->describtion = request()->describtion;
+    //     $advert->price = request()->price;
 
-        $advert->save();
+    //     $advert->save();
 
-        return redirect('/advert.all');
+    //     return redirect('/advert.all');
+    // dd("test");
+        Advert::where('id' , $id)->update([
+            'title'=>$request->title,
+            'describtion'=>$request->describtion,
+            'price'=>$request->price
+        ]);
+        return redirect(route('advertslist'));
     }
+
 }

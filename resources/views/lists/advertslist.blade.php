@@ -25,20 +25,23 @@ listpage
                          <form action="" method="post">
                             @csrf
                             @method('post')
-                            <a href="/advert.edit/{{$advert->id}}"> {{$advert->title}}</a>
+                            <a > {{$advert->title}}</a>
                          </form>
                    </td>
 
                    <td>
                          <form action="/advert.edit/{{$advert->id}}" method="post">
                             @csrf
+
                             <button class="btn btn-primary btn-sm"> edit </button>
                          </form>
                    </td>
 
                    <td>
                          <form action="/advert.delete/{{$advert->id}}" method="post">
+
                             @csrf
+                            @method('DELETE')
                             <button class="btn btn-danger btn-sm"> delete </button>
                           </form>
                    </td>

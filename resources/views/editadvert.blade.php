@@ -6,10 +6,11 @@
 <div class="container" style="padding-left:30%;padding-right:30%; margin-top:100px;">
     <form style="text-align:center"  action="/advert.update/{{$advert->id}}" method="POST" >
      @csrf
+     @method('PATCH')
         <div class="form-group card-body">
               <div class="form-group"  style="margin-top:20px">
-                 <label for="Title">نام کالا</label>
-                    <input type="text" class="form-control" id="Title" name="Title" value="{{$advert->title}}" >
+                 <label for="title">نام کالا</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{$advert->title}}" >
               </div>
               <br>
                  <label for="describtion">توصیف کالا</label>

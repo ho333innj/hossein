@@ -22,5 +22,6 @@
      <br>
     <button type="submit" class="btn btn-primary"  style="margin-top:20px" >ثبت آگهی</button>
 </form>
+</div>
 
 @endsection
