@@ -2,12 +2,14 @@
 
 namespace App\Mail;
 
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+
 
 class TestMail extends Mailable
 {
@@ -16,9 +18,15 @@ class TestMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $fromAddress , $to , $body , $subject , $fullname , $username;
+
+    public function __construct($subject ,$fromAddress ,  $fullname , $username, $body)
     {
-        //
+        $this->subject = $subject;
+        $this->fromAddress = $fromAddress;
+        $this->fullname = $fullname;
+        $this->username = $username;
+        $this->body = $body;
     }
 
     /**
@@ -27,7 +35,8 @@ class TestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Mail',
+            from : $this->fromAddress ,
+            subject: $this->subject,
         );
     }
 
@@ -37,7 +46,8 @@ class TestMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail',
+            with: ['fullname' => $this->fullname, 'username' => $this->username, 'body' =>$this->body ],
         );
     }
 

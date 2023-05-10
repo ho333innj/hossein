@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\AdvertController;
 use App\Http\Controllers\ProfileController;
 
@@ -40,3 +41,7 @@ Route::get('/advert.all', [AdvertController::class, 'advertshow'])->name('advert
 Route::post('/advert.edit/{id}', [AdvertController::class, 'editAdvert'])->name('editadvertshow');
 Route::patch('/advert.update/{id}', [AdvertController::class, 'updateAdvert'])->name('updateadvert');
 Route::delete('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');
+
+Route::get('/mail.send',[MailController::class , 'send']);
+
+
