@@ -1,6 +1,11 @@
 @extends('layouts.master')
+@section('title')
+    edit advert
+@endsection
+@section('titr')
+    <h3>ویرایش</h3>
+@endsection
 
-@section('title','login')
 @section('main')
 
 

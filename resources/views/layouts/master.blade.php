@@ -16,7 +16,7 @@
     <body>
         <style>
             body  {
-              background-color: #b6c2d1;
+              background-color: #6d6d6e;
             }
             </style>
 
@@ -25,7 +25,8 @@
         <!-- Header-->
        @include('partials.header')
         <!-- Section-->
-        <h1>@yield('titr')</h1>
+        <h1 >@yield('titr')</h1>
+        <br>
         @yield('main')
         <br>
         <!-- Footer-->

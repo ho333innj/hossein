@@ -6,6 +6,15 @@
     <h3>لیست آگهی ها</h3>
 @endsection
 @section('main')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
     <table border='2' class="table table-striped">
         <tr>
@@ -22,7 +31,7 @@
                     <td>{{ $advert->id }}</td>
 
                     <td>
-                        <form action="" method="post">
+                        <form action="#" method="post">
                             @csrf
                             @method('post')
                             <a> {{ $advert->title }}</a>
@@ -32,7 +41,6 @@
                     <td>
                         <form action="/advert.edit/{{ $advert->id }}" method="post">
                             @csrf
-
                             <button class="btn btn-primary btn-sm"> edit </button>
                         </form>
                     </td>
