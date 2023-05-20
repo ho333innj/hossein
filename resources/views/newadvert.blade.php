@@ -12,8 +12,10 @@
 @endif
 <div class="container" style="padding-left:30%;padding-right:30%; margin-top:100px;">
 
-<form style="text-align:center" method="POST" action="/advert.insert">
+<form style="text-align:center" method="POST" action="/advert.insert" enctype="multipart/form-data">
     @csrf
+    @method('post')
+
     <div class="form-group card-body">
           <div class="form-group"  style="margin-top:20px">
          <label for="title">نام کالا</label>
@@ -28,8 +30,13 @@
               <label for="price">قیمت</label>
          <input type="text" class="form-control" id="price" name="price" >
         </div>
+        <div class="form-group"  style="margin-top:20px">
+            <label for="image">تصویر</label>
+         <input type="file" class="form-control" id="image" name="image">
+             </div>
      <br>
     <button type="submit" class="btn btn-primary"  style="margin-top:20px" >ثبت آگهی</button>
+
 </form>
 </div>
 

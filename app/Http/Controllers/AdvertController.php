@@ -14,13 +14,14 @@ class AdvertController extends Controller
         return view('newadvert');
     }
 
-    public function insert()
+    public function insert(request $request)
     {
 
        $validator = Validator::make(request()->all(), [
            'title' => 'required|min:3|max:100',
            'describtion' => 'required|min:5|max:255',
-           'price' => 'required'
+           'price' => 'required',
+           'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
        ],[
            'title.required'=>'لطفا عنوان را وارد کنید',
@@ -31,6 +32,8 @@ class AdvertController extends Controller
            'price.required'=>'لظفا قیمت را وارد کنید'
 
        ]);
+       dd($request->file('image'));
+
 
 
 
@@ -38,12 +41,12 @@ class AdvertController extends Controller
            return redirect()->back()
                ->withErrors($validator);
        }
-
-
         $Advert = new Advert();
         $Advert->title = request('title');
         $Advert->describtion = request('describtion');
         $Advert->price = request('price');
+        // $request->image->move(public_path('images'), $imageName);
+
         $Advert->save();
 
 

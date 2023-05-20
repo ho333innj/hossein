@@ -10,7 +10,7 @@
 
 
 <div class="container" style="padding-left:30%;padding-right:30%; margin-top:100px;">
-    <form style="text-align:center"  action="/advert.update/{{$advert->id}}" method="POST" >
+    <form style="text-align:center"  action="/advert.update/{{$advert->id}}" method="POST" enctype="multipart/form-data">
      @csrf
      @method('PATCH')
         <div class="form-group card-body">
