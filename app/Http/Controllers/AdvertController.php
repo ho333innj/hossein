@@ -32,8 +32,9 @@ class AdvertController extends Controller
            'price.required'=>'لظفا قیمت را وارد کنید'
 
        ]);
-       dd($request->file('image'));
+    //    dd($request->file('image'));
 
+    $file=$request->file('image');
 
 
 
@@ -45,7 +46,9 @@ class AdvertController extends Controller
         $Advert->title = request('title');
         $Advert->describtion = request('describtion');
         $Advert->price = request('price');
-        // $request->image->move(public_path('images'), $imageName);
+        $Advert->image = request('image');
+
+        $request->file('image')->move(public_path('images'), $file->GetClientOriginalName());
 
         $Advert->save();
 
