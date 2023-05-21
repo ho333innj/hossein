@@ -8,8 +8,9 @@
 
 @section('main')
 
-
-<div class="container" style="padding-left:30%;padding-right:30%; margin-top:100px;">
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+{{-- <div class="container" style="padding-left:30%;padding-right:30%; margin-top:100px;"> --}}
     <form style="text-align:center"  action="/advert.update/{{$advert->id}}" method="POST" enctype="multipart/form-data">
      @csrf
      @method('PATCH')
@@ -25,10 +26,12 @@
               <br>
                      <div class="form-group">
                   <label for="price" >قیمت</label>
-             <input type="text" class="form-control" id="price" name="price" value="{{$advert->price}}">
+             <input type="text" class="form-control" id="price" name="price" value="">
             </div>
             <br>
             <input type="submit" value="update">
     </form>
 </div>
+    </div>
+</section>
 @endsection

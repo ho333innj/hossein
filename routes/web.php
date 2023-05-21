@@ -43,5 +43,7 @@ Route::patch('/advert.update/{id}', [AdvertController::class, 'updateAdvert'])->
 Route::delete('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');
 
 Route::get('/mail.send',[MailController::class , 'send']);
+Route::get('/a', [AdvertController::class, 'test'])->name('test');
+
 
 

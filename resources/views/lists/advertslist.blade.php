@@ -40,6 +40,11 @@
 
                     <td>
                         <form action="/advert.edit/{{ $advert->id }}" method="post">
+
+                        {{-- action="{{ route('/advert.edit'), ['id' => $params_id] }}" --}}
+
+                        {{-- action="{{ route('/advert.edit'), ['id' => {{ $advert->id }}] }}" --}}
+                        {{-- <form   action="{{ route('editadvertshow'),[$advert->id] }}" method="post"> --}}
                             @csrf
                             <button class="btn btn-primary btn-sm"> edit </button>
                         </form>
