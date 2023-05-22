@@ -3,7 +3,7 @@
     listpage
 @endsection
 @section('titr')
-    <h3>لیست آگهی ها</h3>
+    <h3 style="text-align:center">لیست آگهی ها</h3>
 @endsection
 @section('main')
 @if ($errors->any())

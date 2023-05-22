@@ -7,7 +7,8 @@
         <br>
 
 <form style="text-align:center" method="POST">
-
+@csrf
+@method(post)
     <div class="form-group">
         <div class="form-group"  style="margin-top:20px">
             <label for="FirstName">نام </label>

@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title','login')
+@section('titr')
+<h3 style="text-align:center">ثبت آگهی</h3>
+@endsection
 @section('main')
 @if ($errors->any())
     <div class="alert alert-danger">

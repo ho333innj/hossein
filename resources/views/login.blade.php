@@ -9,7 +9,7 @@
 
       <div class="form-group">
         <label for="UserName">نام کاربری</label>
-        <input type="text" class="form-control" id="text" name="UserName" value="<?php echo isset($_POST['UserName']) ? $_POST['UserName'] :''?>">
+        <input type="text" class="form-control" id="text" name="UserName" value="">
       </div>
 
 

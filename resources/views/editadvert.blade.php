@@ -3,7 +3,7 @@
     edit advert
 @endsection
 @section('titr')
-    <h3>ویرایش</h3>
+    <h3 style="text-align:center">ویرایش</h3>
 @endsection
 
 @section('main')
@@ -26,7 +26,7 @@
               <br>
                      <div class="form-group">
                   <label for="price" >قیمت</label>
-             <input type="text" class="form-control" id="price" name="price" value="">
+             <input type="text" class="form-control" id="price" name="price" value="{{$advert->price}}">
             </div>
             <br>
             <input type="submit" value="update">

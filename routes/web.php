@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\AdvertController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Advert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,8 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $adverts= Advert::all();
+    return view('home' , ['adverts' => $adverts]);
 })->name('home');
 
 Route::get('/dashboard', function () {
