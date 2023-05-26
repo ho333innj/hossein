@@ -10,12 +10,27 @@
                     </a>
                 </div>
 
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('advertdash')" :active="request()->routeIs('advertdash')">
+                        {{ __('adverts') }}
+                    </x-nav-link>
+                </div>
+                @if (auth()->user()->is_admin){
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('manageadverts')" :active="request()->routeIs('manageadverts')">
+                            {{ __('mansgeadverts') }}
+                        </x-nav-link>
+                    </div>
+                }
+                @endif
+
             </div>
 
             <!-- Settings Dropdown -->

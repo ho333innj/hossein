@@ -27,6 +27,24 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::middleware('auth' , 'verified')->group(function () {
+Route::get('/advertdash', function () {
+    $adverts= Advert::all();
+    return view('advertdash' , ['adverts' => $adverts]);
+})->name('advertdash');
+
+Route::get('/manageadverts', function () {
+    return view('manageadverts');
+})->name('manageadverts');
+});
+
+// Route::get('/adverts2', function () {
+//     return view('admin');
+// })->middleware(['auth', 'is_admin'])->name('adverts2');
+
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
