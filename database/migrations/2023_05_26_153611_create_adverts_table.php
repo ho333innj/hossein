@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('describtion' , 150);
             $table->decimal('price', 12, 3);
             $table->string('image' , 500);
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

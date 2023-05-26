@@ -47,6 +47,8 @@ class AdvertController extends Controller
         $Advert->describtion = request('describtion');
         $Advert->price = request('price');
         $Advert->image = request('image');
+        $Advert->user_id = request('id');
+
 
         $request->file('image')->move(public_path('images'), $file->GetClientOriginalName());
 

@@ -33,6 +33,10 @@
               <label for="price">قیمت</label>
          <input type="text" class="form-control" id="price" name="price" >
         </div>
+        <div class="form-group">
+            <label for="id">آیدی فرستنده</label>
+       <input type="id" class="form-control" id="id" name="id" >
+      </div>
         <div class="form-group"  style="margin-top:20px">
             <label for="image">تصویر</label>
          <input type="file" class="form-control" id="image" name="image">
