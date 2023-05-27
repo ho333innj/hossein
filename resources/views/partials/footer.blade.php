@@ -11,8 +11,7 @@
                    <button class="subs_btn">Sbscribe Now</button>
                 </form>
              </div>
-             <div class="col-md-3 col-sm-6"
-             >
+             <div class="col-md-3 col-sm-6">
                 <div class="Informa helpful">
                    <h3>Useful  Link</h3>
                    <ul>
