@@ -1,4 +1,64 @@
-<header class="bg-dark py-4 ">
+<div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="" /></div>
+ </div>
+ <!-- end loader -->
+ <!-- header -->
+ <header>
+    <div class="header">
+       <div class="container-fluid">
+          <div class="row d_flex">
+             <div class=" col-md-2 col-sm-3 col logo_section">
+                <div class="full">
+                   <div class="center-desk">
+                      <div class="logo">
+                         <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-8 col-sm-9">
+                <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+                   </button>
+                   <div class="collapse navbar-collapse" id="navbarsExample04">
+                      <ul class="navbar-nav mr-auto">
+                         <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="we_do.html">What we do</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio </a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                         </li>
+                      </ul>
+                   </div>
+                </nav>
+             </div>
+             <div class="col-md-2 d_none">
+                <ul class="email text_align_right">
+                   <li> <a href="Javascript:void(0)"> Login </a></li>
+                   <li> <a href="Javascript:void(0)"> <i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"> </i></a> </li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </header>
+
+
+
+
+
+
+{{-- <header class="bg-dark py-4 ">
     <div class="container ">
         <div class="text-right text-white">
             <h1 class="display-6"> Hossein nj</h1>
@@ -13,18 +73,15 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ route('home') }}">صفحه اصلی</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">درباره ما</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('advertslist')}}">لیست آگهی ها</a></li>
-                        {{-- <li class="nav-item"><a class="nav-link" href="{{route('userslist')}}">لیست کاربران</a></li> --}}
                         <li class="nav-item"><a class="nav-link" href="{{route('newadvertshow')}}">ثبت آگهی</a></li>
-                        {{-- <li class="nav-item"><a class="nav-link" href="{{route('editadvertshow')}}">ویرایش آگهی</a></li> --}}
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">پروفایل</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                {{-- <li><a class="dropdown-item"  href="{{ route('login.user') }}">ورود</a></li> --}}
+                                <li><a class="dropdown-item"  href="{{ route('login.user') }}">ورود</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                {{-- <li><a class="dropdown-item" href="{{ route('register.user') }}">ثبت نام</a></li> --}}
+                                <li><a class="dropdown-item" href="{{ route('register.user') }}">ثبت نام</a></li>
 
-                                {{-- <li><a class="dropdown-item" href="#!">New Arrivals</a></li> --}}
                             </ul>
                         </li>
 
@@ -35,10 +92,10 @@
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                                 @else
-                                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">ورود</a>
 
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">ثبت نام</a>
                                     @endif
                                 @endauth
                             </div>
@@ -49,6 +106,6 @@
             </div>
         </nav>
     </div>
-</header>
+</header> --}}
 {{-- py-5
 px-4 px-lg-5 my-5 --}}
