@@ -33,10 +33,6 @@ Route::get('/advertdash', function () {
     $adverts= Advert::all();
     return view('advertdash' , ['adverts' => $adverts]);
 })->name('advertdash');
-
-Route::get('/manageadverts', function () {
-    return view('manageadverts');
-})->name('manageadverts');
 });
 
 // Route::get('/adverts2', function () {
