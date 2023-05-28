@@ -9,6 +9,43 @@ use Illuminate\Support\Facades\Validator;
 
 class AdvertController extends Controller
 {
+    public function index(){
+       $adverts=Advert::all();
+        return view('Adverts.index' , ['adverts' => $adverts]);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function createadvert()
     {
         return view('newadvert');

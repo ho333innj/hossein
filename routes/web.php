@@ -28,16 +28,31 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+// Route::middleware('auth' , 'verified')->group(function () {
+// Route::get('/advertdash', function () {
+//     $adverts= Advert::all();
+//     return view('advertdash' , ['adverts' => $adverts]);
+// })->name('advertdash');
+// });
 Route::middleware('auth' , 'verified')->group(function () {
-Route::get('/advertdash', function () {
-    $adverts= Advert::all();
-    return view('advertdash' , ['adverts' => $adverts]);
-})->name('advertdash');
+    Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertdash');
 });
 
-// Route::get('/adverts2', function () {
-//     return view('admin');
-// })->middleware(['auth', 'is_admin'])->name('adverts2');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
