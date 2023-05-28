@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Validator;
 
 class AdvertController extends Controller
 {
-    public function index(){
-       $adverts=Advert::all();
+    public function index()
+    {
+       $adverts=auth()->user()->Advert;
         return view('Adverts.index' , ['adverts' => $adverts]);
 
     }

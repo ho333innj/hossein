@@ -18,7 +18,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('advertdash')" :active="request()->routeIs('advertdash')">
+                    <x-nav-link :href="route('advertsdash')" :active="request()->routeIs('advertsdash')">
                         {{ __('adverts') }}
                     </x-nav-link>
                 </div>
@@ -49,6 +49,14 @@
                     </x-slot>
 
                     <x-slot name="content">
+
+                        @if (auth()->user()->is_admin)
+                        <x-dropdown-link :href="route('admin.index')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('admin') }}
+                            </x-dropdown-link>
+                            @endif
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>

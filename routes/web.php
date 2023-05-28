@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Advert;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdvertController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Advert;
+use App\Http\Controllers\AdminAdvertController;
 
 
 /*
@@ -35,7 +37,16 @@ Route::get('/dashboard', function () {
 // })->name('advertdash');
 // });
 Route::middleware('auth' , 'verified')->group(function () {
-    Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertdash');
+    Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertsdash');
+
+    Route::middleware(['is_admin'])->name('admin.')->prefix('admin')
+    ->group(function(){
+    Route::get("/" , [AdminController::class , 'index'])->name('index');
+    Route::get('/advertsdash', [AdminAdvertController::class , 'index'])->name('advertsdash');
+
+
+
+    });
 });
 
 
