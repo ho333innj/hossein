@@ -22,6 +22,13 @@
                         {{ __('adverts') }}
                     </x-nav-link>
                 </div>
+                @if (auth()->user()->is_admin)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('advertsdash')" :active="request()->routeIs('advertsdash')">
+                        {{ __('admin panel') }}
+                    </x-nav-link>
+                </div>
+                @endif
                 {{-- @if (auth()->user()->is_admin)
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('manageadverts')" :active="request()->routeIs('manageadverts')">
