@@ -14,9 +14,8 @@
                         <li class="nav-item"><a class="nav-link" href="#!">درباره ما</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('advertslist')}}">لیست آگهی ها</a></li>
                         {{-- <li class="nav-item"><a class="nav-link" href="{{route('userslist')}}">لیست کاربران</a></li> --}}
-                        <a href="{{ Auth::check() ? '/home' : '#' }}">Click Me</a>
-
-                        <li class="nav-item"><a class="nav-link" href="{{route('newadvertshow')}}">ثبت آگهی</a></li>
+                        {{ Auth::check() ? '/dashboard' : '/advert.create' }}
+                        <li class="nav-item"><a class="nav-link" href="/advert.create">ثبت آگهی</a></li>
                         {{-- <li class="nav-item"><a class="nav-link" href="{{route('editadvertshow')}}">ویرایش آگهی</a></li> --}}
 
                         <li class="nav-item dropdown">
@@ -25,7 +24,6 @@
                                 {{-- <li><a class="dropdown-item"  href="{{ route('login.user') }}">ورود</a></li> --}}
                                 <li><hr class="dropdown-divider" /></li>
                                 {{-- <li><a class="dropdown-item" href="{{ route('register.user') }}">ثبت نام</a></li> --}}
-
                                 {{-- <li><a class="dropdown-item" href="#!">New Arrivals</a></li> --}}
                             </ul>
                         </li>
