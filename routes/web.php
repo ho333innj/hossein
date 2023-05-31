@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/h', function () {
 
-    return view('index');
+    return view('newad')->name('newad');
 });
 
 // Route::middleware('auth' , 'verified')->group(function () {
@@ -47,6 +47,7 @@ Route::get('/h', function () {
 Route::middleware('auth' , 'verified')->group(function () {
     Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertsdash');
     Route::get('/newad', [AdvertController::class , 'newad'])->name('newad');
+    Route::post('/advert.insert', [AdvertController::class, 'insert'])->name('newadvert');
 
 
     Route::middleware(['is_admin'])->name('admin.')->prefix('admin')
@@ -64,19 +65,6 @@ Route::middleware('auth' , 'verified')->group(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -86,11 +74,10 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/advert.create', [AdvertController::class, 'createadvert'])->name('newadvertshow');
-Route::post('/advert.insert', [AdvertController::class, 'insert'])->name('newadvert');
+
 Route::get('/advert.all', [AdvertController::class, 'advertshow'])->name('advertslist');
 
-
+Route::get('/advert.create', [AdvertController::class, 'createadvert'])->name('newadvertshow');
 Route::post('/advert.edit/{id}', [AdvertController::class, 'editAdvert'])->name('editadvertshow');
 Route::patch('/advert.update/{id}', [AdvertController::class, 'updateAdvert'])->name('updateadvert');
 Route::delete('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');

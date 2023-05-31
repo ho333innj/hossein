@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Advert;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -17,7 +18,9 @@ class AdvertController extends Controller
     }
     public function newad()
     {
-        return view('profile.newad');
+        $id= auth()->user()->id;
+        // $id= Auth::id();
+        return view('profile.newad', ['id' => $id]);
 
     }
 
@@ -78,6 +81,9 @@ class AdvertController extends Controller
     //    dd($request->file('image'));
 
     $file=$request->file('image');
+    $id=Auth::id();
+
+
 
 
 
@@ -90,7 +96,7 @@ class AdvertController extends Controller
         $Advert->describtion = request('describtion');
         $Advert->price = request('price');
         $Advert->image = request('image');
-        $Advert->user_id = request('id');
+        $Advert->user_id = $id;
 
 
         $request->file('image')->move(public_path('images'), $file->GetClientOriginalName());
@@ -98,7 +104,7 @@ class AdvertController extends Controller
         $Advert->save();
 
 
-        return redirect('/advert.all');
+        return redirect('/dashboard');
     }
 
     public function advertshow(){
