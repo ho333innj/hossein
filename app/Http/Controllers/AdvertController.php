@@ -15,6 +15,11 @@ class AdvertController extends Controller
         return view('Adverts.index' , ['adverts' => $adverts]);
 
     }
+    public function newad()
+    {
+        return view('profile.newad');
+
+    }
 
 
 

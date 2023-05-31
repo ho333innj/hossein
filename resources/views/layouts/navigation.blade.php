@@ -14,18 +14,23 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('پنل کاربری') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('newad')" :active="request()->routeIs('newad')">
+                        {{ __('ثبت آگهی') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('advertsdash')" :active="request()->routeIs('advertsdash')">
-                        {{ __('adverts') }}
+                        {{ __('آگهی های من') }}
                     </x-nav-link>
                 </div>
                 @if (auth()->user()->is_admin)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('advertsdash')" :active="request()->routeIs('advertsdash')">
-                        {{ __('admin panel') }}
+                        {{ __('پنل مدیریت') }}
                     </x-nav-link>
                 </div>
                 @endif

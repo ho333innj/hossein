@@ -29,6 +29,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/h', function () {
+
+    return view('index');
+});
 
 // Route::middleware('auth' , 'verified')->group(function () {
 // Route::get('/advertdash', function () {
@@ -36,8 +40,14 @@ Route::get('/dashboard', function () {
 //     return view('advertdash' , ['adverts' => $adverts]);
 // })->name('advertdash');
 // });
+// Route::middleware('auth' , 'verified')->function () {
+//   Route::get('/newad', [AdvertController::class , 'newad'])->name('newad');
+// }
+
 Route::middleware('auth' , 'verified')->group(function () {
     Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertsdash');
+    Route::get('/newad', [AdvertController::class , 'newad'])->name('newad');
+
 
     Route::middleware(['is_admin'])->name('admin.')->prefix('admin')
     ->group(function(){
