@@ -42,7 +42,7 @@
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ route('home') }}">صفحه اصلی</a></li>
             <li class="nav-item"><a class="nav-link" href="#!">درباره ما</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('newad')}}">ثبت آگهی</a></li>
-            <li class="nav-item"><a class="nav-link" href="#!">آگهی های من</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('myads')}}">آگهی های من</a></li>
 
             <li class="nav-item text-danger"><a class="nav-link" href="#!">خروج</a></li>
         </ul>
@@ -62,7 +62,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="dashboard" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">پنل مدیریت</span>
@@ -251,7 +251,11 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-
+@if(session()->has('status'))
+<div class="text-green-50 m-10 p-10">
+    {{session()->get('status')}}
+</div>
+@endif
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

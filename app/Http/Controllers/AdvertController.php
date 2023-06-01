@@ -23,6 +23,13 @@ class AdvertController extends Controller
         return view('profile.newad', ['id' => $id]);
 
     }
+    public function myads()
+    {
+        $id= auth()->user()->id;
+        // $id= Auth::id();
+        return view('profile.myads', ['id' => $id]);
+
+    }
 
 
 
@@ -104,7 +111,7 @@ class AdvertController extends Controller
         $Advert->save();
 
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('status' , 'آگهی با موفقیت ثبت شد');
     }
 
     public function advertshow(){

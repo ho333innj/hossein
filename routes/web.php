@@ -47,6 +47,9 @@ Route::get('/h', function () {
 Route::middleware('auth' , 'verified')->group(function () {
     Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertsdash');
     Route::get('/newad', [AdvertController::class , 'newad'])->name('newad');
+    Route::get('/myads', [AdvertController::class , 'myads'])->name('myads');
+
+
     Route::post('/advert.insert', [AdvertController::class, 'insert'])->name('newadvert');
 
 

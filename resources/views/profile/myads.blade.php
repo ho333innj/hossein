@@ -33,7 +33,6 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
-
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -42,7 +41,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ route('home') }}">صفحه اصلی</a></li>
             <li class="nav-item"><a class="nav-link" href="#!">درباره ما</a></li>
-            <li class="nav-item"><a class="nav-link" href="#!">ثبت آگهی</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('newad')}}">ثبت آگهی</a></li>
             <li class="nav-item"><a class="nav-link" href="#!">آگهی های من</a></li>
 
             <li class="nav-item text-danger"><a class="nav-link" href="#!">خروج</a></li>
@@ -60,12 +59,10 @@
       </div>
     </form>
   </nav>
-  <h2 class="card-title">ثبت آگهی</h2>
-
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="dashboard" class="brand-link">
+    <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">پنل مدیریت</span>
@@ -253,97 +250,6 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <!-- left column -->
-            <div class="col-md-6">
-              <!-- general form elements -->
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h2 class="card-title">ثبت آگهی</h2>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                {{-- <form action="{{route('newadvert')}}" method="post" enctype="multipart/form-data">
-                    @csrf --}}
-  <h5>مشخصات آگهی را وارد کنید</h5>
-
-  <br>
-
-
-  <form action="/advert.insert" method="POST" enctype="multipart/form-data">
-    @csrf
-    @method('POST')
-    <label for="title">Name:</label>
-    <input type="text" id="title" name="title" required><br><br>
-
-    <label for="describtion">Email:</label>
-    <input type="text" id="describtion" name="describtion" required><br><br>
-
-    <label for="price">Age:</label>
-    <input type="text" id="price" name="price" required><br><br>
-
-    <label for="file">File:</label>
-    <input type="file" id="image" name="image" required><br><br>
-
-    <input type="submit" value="Submit">
-  </form>
-
-{{-- </body>
-</html> --}}
-
-
-                  {{-- <div class="card-body">
-                    <div class="form-group">
-                      <label for="title">عنوان</label>
-                      <input type="text" class="form-control" id="title" placeholder="عنوان را وارد کنید">
-                    </div>
-                    <div class="form-group">
-                      <label for="describtion">توضیحات</label>
-                      <input type="text" class="form-control" id="describtion" placeholder="توضیحات آگهی را وارد کنید">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">قیمت</label>
-                        <input type="text" class="form-control" id="price" placeholder="قیمت را وارد کنید">
-                      </div>
-                    <div class="form-group">
-                      <label for="image">تصویر</label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="image">
-                          <label class="custom-file-label" for="image">انتخاب تصویر</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div> --}}
-                  <!-- /.card-body -->
-                  {{-- <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">ثبت آگهی</button>
-                  </div>
-                </form>
-              </div> --}}
-              <!-- /.card -->
-
-              <!-- Form Element sizes -->
-
-              <!-- /.card -->
-
-              <!-- /.card -->
-
-              <!-- Input addon -->
-
-              <!-- /.card -->
-
-
-            <!--/.col (left) -->
-            <!-- right column -->
-
-            <!--/.col (right) -->
-
-          <!-- /.row -->
-       <!-- /.container-fluid -->
-      </section>
     <!-- Content Header (Page header) -->
 
     <!-- /.content -->
