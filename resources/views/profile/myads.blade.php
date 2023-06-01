@@ -30,6 +30,26 @@
   <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css">
   <!-- template rtl version -->
   <link rel="stylesheet" href="dist/css/custom-style.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 40%;
+      margin-top: 22px;
+      margin-right: 25px;
+      padding: 20px;
+
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .container {
+      padding: 10px 16px;
+      margin-top: 10px;
+    }
+    </style>
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -251,7 +271,22 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-
+    <div class="row">
+    </div>
+    <div class="row">
+          @if (count($adverts))
+            @foreach($adverts as $advert)
+                <div class="card mr:6" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                     <h5 class="card-title">{{ $advert->title }}</h5>
+                <p class="card-text">{{ $advert->describtion }}</p>
+                     <a href="#" class="btn btn-primary">بیشتز</a>
+                </div>
+  </div>
+@endforeach
+@endif
+</div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

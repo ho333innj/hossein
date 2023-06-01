@@ -254,6 +254,15 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <section class="content">
+        {{-- @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif --}}
         <div class="container-fluid">
           <div class="row">
             <!-- left column -->
@@ -276,17 +285,25 @@
     @csrf
     @method('POST')
     <label for="title">Name:</label>
-    <input type="text" id="title" name="title" required><br><br>
-
+    <input type="text" id="title" name="title" value="{{ old('title') }}"  class="@error('title') is-invalid @enderror"><br><br>
+    @error('title')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
     <label for="describtion">Email:</label>
-    <input type="text" id="describtion" name="describtion" required><br><br>
-
+    <input type="text" id="describtion" name="describtion" value="{{ old('describtion') }}"  class="@error('describtion') is-invalid @enderror"><br><br>
+    @error('describtion')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
     <label for="price">Age:</label>
-    <input type="text" id="price" name="price" required><br><br>
-
+    <input type="text" id="price" name="price" value="{{ old('price') }}"  class="@error('price') is-invalid @enderror"><br><br>
+    @error('price')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
     <label for="file">File:</label>
-    <input type="file" id="image" name="image" required><br><br>
-
+    <input type="file" id="image" name="image"  class="@error('image') is-invalid @enderror" ><br><br>
+    @error('image')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
     <input type="submit" value="Submit">
   </form>
 

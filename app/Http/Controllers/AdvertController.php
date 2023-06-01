@@ -26,8 +26,10 @@ class AdvertController extends Controller
     public function myads()
     {
         $id= auth()->user()->id;
+        $adverts= Advert::where('user_id', $id)->get();
+
         // $id= Auth::id();
-        return view('profile.myads', ['id' => $id]);
+        return view('profile.myads', ['adverts' => $adverts]);
 
     }
 
@@ -82,7 +84,7 @@ class AdvertController extends Controller
            'title.max'=>'طول عنوان نباید بیشتر از 100 کاراکتر باشد',
            'describtion.required'=>'لطفا متن توصیف کالا را وارد کنید',
            'describtion.max'=>'طول توصیف کالا نباید بیشتر از 255 کاراکتر باشد',
-           'price.required'=>'لظفا قیمت را وارد کنید'
+           'price.required'=>'لظفا قیمت را وارد کنید',
 
        ]);
     //    dd($request->file('image'));
