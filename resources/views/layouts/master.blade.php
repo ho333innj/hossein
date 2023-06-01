@@ -42,7 +42,6 @@
             </style>
 
         <!-- Navigation-->
-        @include('partials.nav')
         <!-- Header-->
        @include('partials.header')
         <!-- Section-->

@@ -12,23 +12,22 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ route('home') }}">صفحه اصلی</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">درباره ما</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('advertslist')}}">لیست آگهی ها</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="{{route('advertslist')}}">لیست آگهی ها</a></li> --}}
                         {{-- <li class="nav-item"><a class="nav-link" href="{{route('userslist')}}">لیست کاربران</a></li> --}}
                         {{-- <a href="{{ Auth::check() ? '/dashboard' : '/advert,create' }}">ثبت آگهی</a> --}}
 
                         <li class="nav-item"><a class="nav-link" href="{{ Auth::check() ? '/newad' : '/advert.create' }}">ثبت آگهی</a></li>
                         {{-- <li class="nav-item"><a class="nav-link" href="{{route('editadvertshow')}}">ویرایش آگهی</a></li> --}}
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">پروفایل</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{-- <li class="nav-item dropdown"> --}}
+                            {{-- <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">پروفایل</a> --}}
+                            {{-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> --}}
                                 {{-- <li><a class="dropdown-item"  href="{{ route('login.user') }}">ورود</a></li> --}}
-                                <li><hr class="dropdown-divider" /></li>
+                                {{-- <li><hr class="dropdown-divider" /></li> --}}
                                 {{-- <li><a class="dropdown-item" href="{{ route('register.user') }}">ثبت نام</a></li> --}}
-
                                 {{-- <li><a class="dropdown-item" href="#!">New Arrivals</a></li> --}}
-                            </ul>
-                        </li>
+                            {{-- </ul> --}}
+                        {{-- </li> --}}
 
                     </ul>
                     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
