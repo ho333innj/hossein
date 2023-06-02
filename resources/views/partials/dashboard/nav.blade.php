@@ -1,3 +1,4 @@
+
 <nav class="main-header navbar navbar-expand bg-black navbar-dark border-bottom text-secondary ">
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -5,8 +6,15 @@
             <li class="nav-item"><a class="nav-link" href="#!">درباره ما</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('newad')}}">ثبت آگهی</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('myads')}}">آگهی های من</a></li>
+            {{-- <li class="nav-item"><a class="nav-link" href="{{route('myads')}}">ویرایش آگهی</a></li> --}}
 
-            <li class="nav-item text-danger"><a class="nav-link" href="#!">خروج</a></li>
+            <li class="nav-item text-danger">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    @method('POST')
+                    <input type="submit" value="خروج" class="btn-danger">
+                </form>
+            </li>
         </ul>
     </div>
     <!-- SEARCH FORM -->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>پنل مدیریت | داشبورد اول</title>
+  <title>پنل مدیریت | داشبورد</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -30,7 +30,8 @@
   <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css">
   <!-- template rtl version -->
   <link rel="stylesheet" href="dist/css/custom-style.css">
-  <style>
+
+  {{-- <style>
     .card {
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
@@ -46,21 +47,20 @@
     .container {
       padding: 10px 16px;
     }
-    </style>
-        <title>nj-laravel  |  @yield('title')
+    </style> --}}
+        <title>nj-laravel  |  @yield('title')</title>
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         @include('partials.dashboard.nav')
         @include('partials.dashboard.aside')
-    <br>
+
+
+            <br>
         <div class="content-wrapper">
              @yield('main')
         </div>
-    <br>
-
-
-
+        @include('partials.dashboard.footer')
 
 
     </div>

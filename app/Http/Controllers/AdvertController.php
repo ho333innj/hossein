@@ -10,74 +10,29 @@ use Illuminate\Support\Facades\Validator;
 
 class AdvertController extends Controller
 {
-    public function index()
-    {
-       $adverts=auth()->user()->Advert;
-        return view('Adverts.index' , ['adverts' => $adverts]);
-
-    }
     public function newad()
     {
         $id= auth()->user()->id;
         // $id= Auth::id();
-        return view('profile.newad', ['id' => $id]);
-
+        return view('dashboard.newad', ['id' => $id]);
     }
+
     public function myads()
     {
         $id= auth()->user()->id;
         $adverts= Advert::where('user_id', $id)->get();
 
         // $id= Auth::id();
-        return view('profile.myads', ['adverts' => $adverts]);
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function createadvert()
-    {
-        return view('newadvert');
+        return view('dashboard.myads', ['adverts' => $adverts]);
     }
 
     public function insert(request $request)
     {
-
        $validator = Validator::make(request()->all(), [
            'title' => 'required|min:3|max:100',
            'describtion' => 'required|min:5|max:255',
            'price' => 'required',
            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-
        ],[
            'title.required'=>'لطفا عنوان را وارد کنید',
            'title.min'=>'طول عنوان باید بیشتر از 2 کاراکتر باشد',
@@ -85,17 +40,9 @@ class AdvertController extends Controller
            'describtion.required'=>'لطفا متن توصیف کالا را وارد کنید',
            'describtion.max'=>'طول توصیف کالا نباید بیشتر از 255 کاراکتر باشد',
            'price.required'=>'لظفا قیمت را وارد کنید',
-
        ]);
-    //    dd($request->file('image'));
-
     $file=$request->file('image');
     $id=Auth::id();
-
-
-
-
-
        if ($validator->fails()) {
            return redirect()->back()
                ->withErrors($validator);
@@ -106,13 +53,8 @@ class AdvertController extends Controller
         $Advert->price = request('price');
         $Advert->image = request('image');
         $Advert->user_id = $id;
-
-
         $request->file('image')->move(public_path('images'), $file->GetClientOriginalName());
-
         $Advert->save();
-
-
         return redirect('/dashboard')->with('status' , 'آگهی با موفقیت ثبت شد');
     }
 
@@ -127,7 +69,7 @@ class AdvertController extends Controller
 
         $advert->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('status' , 'آگهی حذف شد');
     }
 
     public function editAdvert($id){

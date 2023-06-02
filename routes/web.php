@@ -26,31 +26,19 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/h', function () {
-
-    return view('newad')->name('newad');
-});
-
-// Route::middleware('auth' , 'verified')->group(function () {
-// Route::get('/advertdash', function () {
-//     $adverts= Advert::all();
-//     return view('advertdash' , ['adverts' => $adverts]);
-// })->name('advertdash');
-// });
-// Route::middleware('auth' , 'verified')->function () {
-//   Route::get('/newad', [AdvertController::class , 'newad'])->name('newad');
-// }
-
 Route::middleware('auth' , 'verified')->group(function () {
-    Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertsdash');
+    // Route::get('/adverstdash', [AdvertController::class , 'index'])->name('advertsdash');
     Route::get('/newad', [AdvertController::class , 'newad'])->name('newad');
-    Route::get('/myads', [AdvertController::class , 'myads'])->name('myads');
-
-
     Route::post('/advert.insert', [AdvertController::class, 'insert'])->name('newadvert');
+    Route::get('/myads', [AdvertController::class , 'myads'])->name('myads');
+    Route::patch('/advert.update/{id}', [AdvertController::class, 'updateAdvert'])->name('updateadvert');
+    Route::delete('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');
+
+
+
 
 
     Route::middleware(['is_admin'])->name('admin.')->prefix('admin')
@@ -83,7 +71,7 @@ Route::get('/advert.all', [AdvertController::class, 'advertshow'])->name('advert
 Route::get('/advert.create', [AdvertController::class, 'createadvert'])->name('newadvertshow');
 Route::post('/advert.edit/{id}', [AdvertController::class, 'editAdvert'])->name('editadvertshow');
 Route::patch('/advert.update/{id}', [AdvertController::class, 'updateAdvert'])->name('updateadvert');
-Route::delete('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');
+// Route::delete('/advert.delete/{id}', [AdvertController::class, 'deleteAdvert'])->name('deleteadvert');
 
 Route::get('/mail.send',[MailController::class , 'send']);
 Route::get('/a', [AdvertController::class, 'test'])->name('test');

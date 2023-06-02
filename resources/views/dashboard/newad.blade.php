@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.masterdashboard')
 @section('title','ثبت آگهی')
 @section('main')
-<section class="content">
+    <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
@@ -36,8 +36,12 @@
                 @enderror
             <input type="submit" value="Submit">
 </form>
-</section>
 </div>
+</div>
+</div>
+</div>
+    </section>
+
 @endsection
-@endsection
+
 
