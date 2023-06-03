@@ -15,7 +15,7 @@
             <img src="https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&d=mm&r=g" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">حسام موسوی</a>
+            <a href="{{route('profile.edit')}}" class="d-block"> {{auth()->user()->name}}</a>
           </div>
         </div>
         <!-- Sidebar Menu -->
@@ -25,10 +25,10 @@
                  with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
               <a href="{{route('dashboard')}}" class="nav-link active">
-                <i class="nav-icon fa fa-dashboard"></i>
+                {{-- <i class="nav-icon fa fa-dashboard"></i> --}}
                 <p>
                   داشبورد
-                  <i class="right fa fa-angle-left"></i>
+                  {{-- <i class="right fa fa-angle-left"></i> --}}
                 </p>
               </a>
               <ul class="nav nav-treeview">
@@ -129,17 +129,29 @@
               <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-edit"></i>
                 <p>
-                  فرم‌ها
+                  پروفایل
                   <i class="fa fa-angle-left right"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/forms/general.html" class="nav-link">
+                  <a href="{{ route('profile.edit') }}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>اجزا عمومی</p>
+                    <p>ویرایش پروفایل</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                    <a href="pages/forms/general.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>تغییر رمز ورود</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/forms/general.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>حذف اکانت</p>
+                    </a>
+                  </li>
                 {{-- <li class="nav-item">
                   <a href="pages/forms/advanced.html" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
@@ -153,6 +165,41 @@
                   </a>
                 </li> --}}
               </ul>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-edit"></i>
+                  <p>
+                    آگهی ها
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('newad')}}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>ثبت آگهی</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{route('myads')}}" class="nav-link">
+                        <i class="fa fa-circle-o nav-icon"></i>
+                        <p>مدیریت آگهی ها</p>
+                      </a>
+                    </li>
+
+                  {{-- <li class="nav-item">
+                    <a href="pages/forms/advanced.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>پیشرفته</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/forms/editors.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>ویشرایشگر</p>
+                    </a>
+                  </li> --}}
+                </ul>
             </li>
             {{-- <li class="nav-item has-treeview">
               <a href="#" class="nav-link">

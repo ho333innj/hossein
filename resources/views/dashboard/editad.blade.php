@@ -34,9 +34,8 @@
                 @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-            <input type="submit" value="Submit">
+            <input type="submit" value="ویرایش">
 </form>
 </section>
 </div>
 @endsection
-

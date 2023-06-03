@@ -118,8 +118,9 @@ class AdvertController extends Controller
         ]);
         return redirect(route('advertslist'));
     }
-    public function test(){
-        return view('editadvert');
+    public function createadvert(){
+        return view('newadvert');
     }
 
 }
+
