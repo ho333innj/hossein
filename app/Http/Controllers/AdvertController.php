@@ -28,6 +28,10 @@ class AdvertController extends Controller
 
     public function insert(request $request)
     {
+        // $test= request('image');
+        // dd($test);
+
+
        $validator = Validator::make(request()->all(), [
            'title' => 'required|min:3|max:100',
            'describtion' => 'required|min:5|max:255',
@@ -41,6 +45,10 @@ class AdvertController extends Controller
            'describtion.max'=>'طول توصیف کالا نباید بیشتر از 255 کاراکتر باشد',
            'price.required'=>'لظفا قیمت را وارد کنید',
        ]);
+       $imagename=time() . '-' . request('image')->GetClientOriginalName();
+       $request->file('image')->move(public_path('images'),  $imagename);
+
+    //    dd( $imagename);
     $file=$request->file('image');
     $id=Auth::id();
        if ($validator->fails()) {
@@ -51,11 +59,10 @@ class AdvertController extends Controller
         $Advert->title = request('title');
         $Advert->describtion = request('describtion');
         $Advert->price = request('price');
-        $Advert->image = request('image');
+        $Advert->image = $imagename;
         $Advert->user_id = $id;
-        $request->file('image')->move(public_path('images'), $file->GetClientOriginalName());
         $Advert->save();
-        return redirect('/dashboard')->with('status' , 'آگهی با موفقیت ثبت شد');
+        return redirect('/dashboard')->with('status' , 'آگهی شما با موفقیت ثبت شد');
     }
 
     public function advertshow(){
@@ -69,13 +76,13 @@ class AdvertController extends Controller
 
         $advert->delete();
 
-        return redirect()->back()->with('status' , 'آگهی حذف شد');
+        return redirect()->back()->with('status' , 'آگهی شما حذف شد');
     }
 
     public function editAdvert($id){
 
         $advert = Advert::find($id);
-       return view('editadvert',['advert'=>$advert]);
+       return view('dashboard.editad',['advert'=>$advert]);
     }
 
     public function updateAdvert(request $request , $id){
@@ -116,7 +123,7 @@ class AdvertController extends Controller
             'describtion'=>$request->describtion,
             'price'=>$request->price
         ]);
-        return redirect(route('advertslist'));
+        return redirect(route('myads'))->with('status' , 'آگهی شما با موفقیت وایرایش شد');
     }
     public function createadvert(){
         return view('newadvert');

@@ -21,11 +21,14 @@
     }
     </style>
 @section('main')
-@if(session()->has('status'))
+<p style="background: bisque">
+    @if(session()->has('status'))
 <div class="text-green-50 m-10 p-10">
     {{session()->get('status')}}
 </div>
 @endif
+</p>
+
 
 <div class="row">
 </div>
@@ -37,7 +40,7 @@
             <div class="card-body">
                  <h5 class="card-title">{{ $advert->title }}</h5>
             <p class="card-text">{{ $advert->describtion }}</p>
-            <form method="POST" action="{{ route('logout') }}">
+            <form method="POST" action="/advert.edit/{{ $advert->id }}">
                 @csrf
                 @method('POST')
                 <input type="submit" value="ویرایش" class="btn-secondary">

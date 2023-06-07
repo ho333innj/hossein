@@ -5,7 +5,6 @@
            style="opacity: .8">
       <span class="brand-text font-weight-light">پنل مدیریت</span>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar" style="direction: ltr">
       <div style="direction: rtl">
@@ -141,13 +140,13 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/forms/general.html" class="nav-link">
+                    <a href="{{ route('profile.edit') }}" class="nav-link">
                       <i class="fa fa-circle-o nav-icon"></i>
                       <p>تغییر رمز ورود</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/forms/general.html" class="nav-link">
+                    <a href="{{ route('profile.edit') }}" class="nav-link">
                       <i class="fa fa-circle-o nav-icon"></i>
                       <p>حذف اکانت</p>
                     </a>
